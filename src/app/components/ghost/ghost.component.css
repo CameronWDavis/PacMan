@@ -1,0 +1,70 @@
+.ghost {
+  position: absolute;
+  border-radius: 50% 50% 0 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ghost::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: inherit;
+  clip-path: polygon(
+    0% 100%,
+    0% 0%,
+    12.5% 50%,
+    25% 0%,
+    37.5% 50%,
+    50% 0%,
+    62.5% 50%,
+    75% 0%,
+    87.5% 50%,
+    100% 0%,
+    100% 100%
+  );
+}
+
+.ghost-eyes {
+  display: flex;
+  gap: 25%;
+  margin-top: -20%;
+}
+
+.eye {
+  width: 25%;
+  height: 40%;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.eye::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: black;
+  border-radius: 50%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scared {
+  animation: flash 0.3s infinite;
+}
+
+@keyframes flash {
+  0%, 100% {
+    background-color: blue !important;
+  }
+  50% {
+    background-color: white !important;
+  }
+}

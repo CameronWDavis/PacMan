@@ -1,0 +1,28 @@
+.pellet,
+.power-pellet {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.pellet {
+  width: 4px;
+  height: 4px;
+}
+
+.power-pellet {
+  width: 10px;
+  height: 10px;
+  animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+}

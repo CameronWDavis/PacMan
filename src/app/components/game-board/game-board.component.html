@@ -1,0 +1,47 @@
+<app-scoreboard [gameState]="gameState"></app-scoreboard>
+
+<div class="game-container">
+  <div class="game-board"
+       [style.width.px]="(gameBoard.length > 0 ? gameBoard[0].length : 0) * cellSize"
+       [style.height.px]="gameBoard.length * cellSize">
+
+    <!-- Render maze walls -->
+    <div class="maze">
+      <div *ngFor="let row of gameBoard; let y = index" class="row">
+        <div *ngFor="let cell of row; let x = index"
+             class="cell"
+             [class.wall]="cell === CellType.WALL"
+             [style.width.px]="cellSize"
+             [style.height.px]="cellSize">
+        </div>
+      </div>
+    </div>
+
+    <!-- Render pellets -->
+    <app-pellet *ngFor="let pellet of getPellets(); trackBy: trackPellet"
+                [x]="pellet.x"
+                [y]="pellet.y"
+                [isPowerPellet]="pellet.isPowerPellet"
+                [cellSize]="cellSize">
+    </app-pellet>
+
+    <!-- Render Pacman -->
+    <app-pacman [position]="pacmanPosition"
+                [direction]="pacmanDirection"
+                [cellSize]="cellSize">
+    </app-pacman>
+
+    <!-- Render ghosts -->
+    <app-ghost *ngFor="let ghost of ghosts"
+               [ghost]="ghost"
+               [cellSize]="cellSize">
+    </app-ghost>
+  </div>
+
+  <div class="instructions">
+    <h3>Controls</h3>
+    <p>Arrow Keys or WASD: Move</p>
+    <p>P: Pause</p>
+    <p>Space: Restart (when game over)</p>
+  </div>
+</div>

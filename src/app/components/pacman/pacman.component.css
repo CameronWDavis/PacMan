@@ -1,0 +1,17 @@
+.pacman {
+  position: absolute;
+  background-color: yellow;
+  border-radius: 50%;
+  clip-path: polygon(100% 50%, 50% 0%, 0% 0%, 0% 100%, 50% 100%);
+  animation: chomp 0.15s infinite;
+  z-index: 10;
+}
+
+@keyframes chomp {
+  0%, 100% {
+    clip-path: polygon(100% 50%, 50% 0%, 0% 0%, 0% 100%, 50% 100%);
+  }
+  50% {
+    clip-path: polygon(100% 50%, 50% 20%, 0% 20%, 0% 80%, 50% 80%);
+  }
+}

@@ -1,0 +1,13 @@
+<div
+  class="ghost"
+  [class.scared]="ghost.scared"
+  [style.left.px]="ghost.position.x * cellSize"
+  [style.top.px]="ghost.position.y * cellSize"
+  [style.width.px]="cellSize"
+  [style.height.px]="cellSize"
+  [style.background-color]="ghost.scared ? 'blue' : ghost.color">
+  <div class="ghost-eyes">
+    <div class="eye"></div>
+    <div class="eye"></div>
+  </div>
+</div>

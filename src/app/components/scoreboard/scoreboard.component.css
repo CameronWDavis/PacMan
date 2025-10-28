@@ -1,0 +1,68 @@
+.scoreboard {
+  background-color: #000;
+  color: #fff;
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  border-bottom: 2px solid #00f;
+}
+
+.score-item {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.label {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+.value {
+  color: #fff;
+  margin-left: 5px;
+}
+
+.game-over,
+.paused,
+.level-complete {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 40px;
+  border: 3px solid #ffff00;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.game-over h2,
+.paused h2,
+.level-complete h2 {
+  color: #ffff00;
+  font-size: 48px;
+  margin: 0 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(255, 255, 0, 0.5);
+}
+
+.level-complete h2 {
+  animation: pulse-text 0.5s ease-in-out infinite;
+}
+
+@keyframes pulse-text {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.game-over p,
+.paused p,
+.level-complete p {
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+}
